@@ -706,7 +706,7 @@ function configure_memplus_parameters() {
             # reset zram swapspace
             swapoff /dev/block/zram0
             echo 1 > /sys/block/zram0/reset
-            echo 2202009600 > /sys/block/zram0/disksize
+            echo 4294967296 > /sys/block/zram0/disksize
             echo 0 > /sys/block/zram0/mem_limit
             mkswap /dev/block/zram0
             swapon /dev/block/zram0 -p 32758
@@ -721,7 +721,7 @@ function configure_memplus_parameters() {
             swapoff /dev/block/zram0
             echo 1 > /sys/block/zram0/reset
             echo lz4 > /sys/block/zram0/comp_algorithm
-            echo 2202009600 > /sys/block/zram0/disksize
+            echo 4294967296 > /sys/block/zram0/disksize
             echo 0 > /sys/block/zram0/mem_limit
             mkswap /dev/block/zram0
             swapon /dev/block/zram0 -p 32758
@@ -4880,7 +4880,7 @@ case "$target" in
     echo 0-6 > /dev/cpuset/foreground/cpus
 
     echo 1 > /proc/sys/kernel/sched_energy_aware
-    
+
 	# Turn off scheduler boost at the end
 	echo 0 > /proc/sys/kernel/sched_boost
 
