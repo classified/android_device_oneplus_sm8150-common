@@ -607,15 +607,13 @@ function configure_zram_parameters() {
         let zRamSizeMB=4096
     fi
 
-    if [ "$low_ram" == "true" ]; then
-        echo lz4 > /sys/block/zram0/comp_algorithm
-    fi
+    echo lz4 > /sys/block/zram0/comp_algorithm
 
     if [ -f /sys/block/zram0/disksize ]; then
         if [ -f /sys/block/zram0/use_dedup ]; then
             echo 1 > /sys/block/zram0/use_dedup
         fi
-        echo "$zRamSizeMB""$diskSizeUnit" > /sys/block/zram0/disksize
+        echo 4294967296 > /sys/block/zram0/disksize
 
         # ZRAM may use more memory than it saves if SLAB_STORE_USER
         # debug option is enabled.
@@ -706,7 +704,7 @@ function configure_memplus_parameters() {
             # reset zram swapspace
             swapoff /dev/block/zram0
             echo 1 > /sys/block/zram0/reset
-            echo 2202009600 > /sys/block/zram0/disksize
+            echo 4294967296 > /sys/block/zram0/disksize
             echo 0 > /sys/block/zram0/mem_limit
             mkswap /dev/block/zram0
             swapon /dev/block/zram0 -p 32758
@@ -721,7 +719,7 @@ function configure_memplus_parameters() {
             swapoff /dev/block/zram0
             echo 1 > /sys/block/zram0/reset
             echo lz4 > /sys/block/zram0/comp_algorithm
-            echo 2202009600 > /sys/block/zram0/disksize
+            echo 4294967296 > /sys/block/zram0/disksize
             echo 0 > /sys/block/zram0/mem_limit
             mkswap /dev/block/zram0
             swapon /dev/block/zram0 -p 32758
