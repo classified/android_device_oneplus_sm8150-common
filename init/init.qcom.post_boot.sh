@@ -5344,6 +5344,10 @@ case "$target" in
 		echo "0:1324800" > /sys/module/cpu_boost/parameters/input_boost_freq
 		echo 120 > /sys/module/cpu_boost/parameters/input_boost_ms
 
+        # Enable idle state listener
+        echo 1   > /sys/class/drm/card0/device/idle_encoder_mask
+        echo 100 > /sys/class/drm/card0/device/idle_timeout_ms
+
 		# Disable wsf, beacause we are using efk.
 		# wsf Range : 1..1000 So set to bare minimum value 1.
 	        echo 1 > /proc/sys/vm/watermark_scale_factor
