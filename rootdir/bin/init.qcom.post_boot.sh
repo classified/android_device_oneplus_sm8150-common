@@ -4874,6 +4874,10 @@ case "$target" in
 	echo 10 > /proc/sys/kernel/sched_group_downmigrate
 	echo 1 > /proc/sys/kernel/sched_walt_rotate_big_tasks
 
+    # Enable idle state listener
+    echo 1   > /sys/class/drm/card0/device/idle_encoder_mask
+    echo 100 > /sys/class/drm/card0/device/idle_timeout_ms
+
 	# cpuset parameters
 	echo 0-1 > /dev/cpuset/background/cpus
 	echo 0-3 > /dev/cpuset/system-background/cpus
