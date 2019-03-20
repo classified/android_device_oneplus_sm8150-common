@@ -706,6 +706,7 @@ function configure_memplus_parameters() {
             # reset zram swapspace
             swapoff /dev/block/zram0
             echo 1 > /sys/block/zram0/reset
+            echo lz4 > /sys/block/zram0/comp_algorithm
             echo 4294967296 > /sys/block/zram0/disksize
             echo 0 > /sys/block/zram0/mem_limit
             mkswap /dev/block/zram0
