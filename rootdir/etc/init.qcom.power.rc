@@ -275,3 +275,7 @@ on init
     chown system system /dev/cpuset/camera-daemon
     chown system system /dev/cpuset/camera-daemon/tasks
     chmod 0664 /dev/cpuset/camera-daemon/tasks
+    
+on boot
+    # Enable suspend to idle mode to reduce latency during suspend/resume
+    write /sys/power/mem_sleep "s2idle"
