@@ -215,11 +215,29 @@
         </interface>
     </hal>
     <hal format="hidl">
-        <name>vendor.nxp.nxpnfc</name>
+        <name>vendor.dolby.hardware.dms</name>
+        <transport>hwbinder</transport>
+        <version>2.0</version>
+        <interface>
+            <name>IDms</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.oneplus.engnative.engineer</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
         <interface>
-            <name>INxpNfc</name>
+            <name>IEngineer</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.oneplus.faceunlock.hal</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IFaceUnlockNativeService</name>
             <instance>default</instance>
         </interface>
     </hal>
