@@ -167,6 +167,9 @@ ro.hardware.nfc_nci=nqx.default
 vendor.pasr.activemode.enabled=true
 vendor.power.pasr.enabled=false
 
+# Perf
+ro.vendor.extension_library=libqti-perfd-client.so
+
 # OnePlus
 vendor.product.manufacturer=OPD
 
