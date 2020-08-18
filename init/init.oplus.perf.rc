@@ -126,6 +126,10 @@ on property:vendor.post_boot.parsed=1
     write /proc/sys/kernel/sched_conservative_pl 1
     write /proc/sys/kernel/sched_tunable_scaling 1
 
+    # Report max frequency to unity tasks.
+    write /proc/sys/kernel/sched_lib_name "UnityMain,libunity.so"
+    write /proc/sys/kernel/sched_lib_mask_force 255
+
 on property:persist.sys.device_provisioned=1
     setprop dalvik.vm.dex2oat-cpu-set 0,1,2,3,4,5,7
     setprop dalvik.vm.dex2oat-threads 6
