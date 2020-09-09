@@ -240,6 +240,7 @@ PRODUCT_PACKAGES += \
 # Init
 PRODUCT_PACKAGES += \
     ftm_power_config.sh \
+    fstab.zram \
     init.class_main.sh \
     init.crda.sh \
     init.mdm.sh \
