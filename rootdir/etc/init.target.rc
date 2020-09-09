@@ -129,6 +129,9 @@ on property:sys.boot_completed=1
     write /dev/cpuset/display/cpus 4-7
     # endif VENDOR_EDIT
 
+    # Enable ZRAM on boot_complete
+    swapon_all /vendor/etc/fstab.zram
+    
 #USB controller configuration
     setprop vendor.usb.rndis.func.name "gsi"
     setprop vendor.usb.rmnet.func.name "gsi"
