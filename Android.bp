@@ -1,3 +1,6 @@
 soong_namespace {
-    imports: ["hardware/oneplus", "hardware/qcom/bootctrl"],
+    imports: [
+        "hardware/oneplus",
+        "hardware/qcom-caf/bootctrl"
+    ],
 }
