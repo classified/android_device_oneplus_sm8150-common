@@ -375,7 +375,7 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power-service-qti \
+    android.hardware.power-service.msmnile-libperfmgr \
     android.hardware.power@1.2.vendor \
     android.hardware.power.stats@1.0-service.mock
 
@@ -433,7 +433,9 @@ PRODUCT_PACKAGES += \
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH)
+    $(LOCAL_PATH) \
+    hardware/google/interfaces \
+    hardware/google/pixel
 
 # Thermal
 PRODUCT_PACKAGES += \
