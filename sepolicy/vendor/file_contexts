@@ -104,3 +104,6 @@
 
 # Display
 /(vendor|system/vendor)/bin/hw/vendor\.lineage\.livedisplay@2\.1-service\.oneplus_msmnile    u:object_r:hal_lineage_livedisplay_qti_exec:s0
+
+# HALs
+/vendor/bin/hw/android\.hardware\.power-service\.msmnile-libperfmgr   u:object_r:hal_power_default_exec:s0
