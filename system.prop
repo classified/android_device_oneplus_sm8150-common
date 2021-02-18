@@ -57,6 +57,10 @@ ro.vendor.product.device.db=OP_DEVICE
 # Perf
 ro.vendor.qti.sys.fw.bg_apps_limit=60
 
+# LMKD
+ro.config.low_ram=false
+ro.lmk.log_stats=true
+
 # Radio
 DEVICE_PROVISIONED=1
 persist.vendor.data.mode=concurrent
