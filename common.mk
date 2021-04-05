@@ -385,6 +385,9 @@ PRODUCT_ENFORCE_RRO_TARGETS := *
 PRODUCT_PACKAGES += \
     WifiResCommon
 
+# Project ID Quota
+$(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
+
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power-service-qti \
