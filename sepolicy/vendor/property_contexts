@@ -29,6 +29,9 @@ persist.vendor.oem.twice.modemdump     u:object_r:vendor_oem_dump_prop:s0
 # Param
 ro.boot.prmec    u:object_r:exported_default_prop:s0
 
+# Power HAL
+vendor.powerhal.                   u:object_r:vendor_power_prop:s0
+
 # RF version
 ro.boot.rf_version    u:object_r:exported_default_prop:s0
 
