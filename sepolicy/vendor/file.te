@@ -3,3 +3,6 @@ type public_adsprpcd_file, file_type;
 
 # USB
 type vendor_sysfs_usb_data_enabled, fs_type, sysfs_type;
+
+# Power
+type proc_sched_energy_aware, proc_type, fs_type;
