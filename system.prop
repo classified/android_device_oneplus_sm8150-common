@@ -19,9 +19,6 @@ persist.vendor.overlay.izat.optin=rro
 debug.sf.enable_hwc_vds=1
 vendor.display.enable_rotator_ui=1
 
-# IO Prefetcher
-vendor.iop.enable_uxe=1
-
 # Media
 av.offload.enable=true
 media.settings.xml=/vendor/etc/media_profiles_vendor.xml
