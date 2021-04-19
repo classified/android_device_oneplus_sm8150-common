@@ -3,3 +3,9 @@ genfscon sysfs /class/motor    u:object_r:sysfs_motor:s0
 
 # USB
 genfscon sysfs /devices/platform/soc/a600000.ssusb/usb_data_enabled    u:object_r:vendor_sysfs_usb_data_enabled:s0
+
+# Power
+genfscon proc /sys/kernel/sched_energy_aware u:object_r:proc_sched_energy_aware:s0
+
+# UFS
+genfscon sysfs /devices/platform/soc/1d84000.ufshc/clkgate_enable               u:object_r:vendor_sysfs_scsi_host:s0
