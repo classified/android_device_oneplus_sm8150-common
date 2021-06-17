@@ -176,6 +176,7 @@ PRODUCT_PACKAGES += \
     ftm_power_config.sh \
     init.class_main.sh \
     init.crda.sh \
+    init.display.rc \
     init.mdm.sh \
     init.oem.debug.rc \
     init.oem.rc \
