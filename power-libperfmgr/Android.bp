@@ -5,7 +5,7 @@ cc_binary {
     vintf_fragments: ["android.hardware.power-service.msmnile.xml"],
     vendor: true,
     shared_libs: [
-        "android.hardware.power-V2-ndk_platform",
+        "android.hardware.power-V2-ndk",
         "libbase",
         "libcutils",
         "liblog",
@@ -14,7 +14,7 @@ cc_binary {
         "libdisppower-pixel",
         "libperfmgr",
         "libprocessgroup",
-        "pixel-power-ext-V1-ndk_platform",
+        "pixel-power-ext-V1-ndk",
     ],
     srcs: [
         "service.cpp",
