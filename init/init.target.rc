@@ -183,6 +183,13 @@ on property:sys.boot_completed=1
 #Load WLAN driver
     insmod /vendor/lib/modules/qca_cld3_wlan.ko
 
+# Disable wsf, beacause we are using efk.
+    # wsf Range : 1..1000 So set to bare minimum value 1.
+    write /proc/sys/vm/watermark_scale_factor 1
+
+    # Enable oom_reaper
+    write /sys/module/lowmemorykiller/parameters/oom_reaper 1
+
 #USB controller configuration
     setprop vendor.usb.rndis.func.name "gsi"
     setprop vendor.usb.rmnet.func.name "gsi"
