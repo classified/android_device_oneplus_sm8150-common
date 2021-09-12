@@ -222,6 +222,7 @@ PRODUCT_PACKAGES += \
 # Init
 PRODUCT_PACKAGES += \
     init.class_main.sh \
+    init.power.rc \
     init.oplus.hw.rc \
     init.oplus.hw.rc.recovery \
     init.oplus.rc \
