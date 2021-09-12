@@ -4875,31 +4875,35 @@ case "$target" in
 	echo 1 > /proc/sys/kernel/sched_walt_rotate_big_tasks
 
 	# cpuset parameters
-	echo 0-3 > /dev/cpuset/background/cpus
+	echo 0-1 > /dev/cpuset/background/cpus
 	echo 0-3 > /dev/cpuset/system-background/cpus
-    echo 0-6 > /dev/cpuset/foreground/cpus
+    echo 0-3,5-6 > /dev/cpuset/foreground/cpus
+    echo 0-7 > /dev/cpuset/top-app/cpus 
+    echo 0-3 > /dev/cpuset/restricted/cpus 
+    echo 1-2 > /dev/cpuset/audio-app/cpus 
+
 	# Turn off scheduler boost at the end
 	echo 0 > /proc/sys/kernel/sched_boost
 
 	# configure governor settings for silver cluster
 	echo "schedutil" > /sys/devices/system/cpu/cpufreq/policy0/scaling_governor
-	echo 0 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/up_rate_limit_us
-        echo 0 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/down_rate_limit_us
+	echo 500 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/up_rate_limit_us
+    echo 20000 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/down_rate_limit_us
 	echo 1209600 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/hispeed_freq
 	echo 576000 > /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq
 	echo 1 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/pl
 
 	# configure governor settings for gold cluster
 	echo "schedutil" > /sys/devices/system/cpu/cpufreq/policy4/scaling_governor
-	echo 0 > /sys/devices/system/cpu/cpufreq/policy4/schedutil/up_rate_limit_us
-        echo 0 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/down_rate_limit_us
+	echo 500 > /sys/devices/system/cpu/cpufreq/policy4/schedutil/up_rate_limit_us
+    echo 10000 > /sys/devices/system/cpu/cpufreq/policy4/schedutil/down_rate_limit_us
 	echo 1612800 > /sys/devices/system/cpu/cpufreq/policy4/schedutil/hispeed_freq
 	echo 1 > /sys/devices/system/cpu/cpufreq/policy4/schedutil/pl
 
 	# configure governor settings for gold+ cluster
 	echo "schedutil" > /sys/devices/system/cpu/cpufreq/policy7/scaling_governor
-	echo 0 > /sys/devices/system/cpu/cpufreq/policy7/schedutil/up_rate_limit_us
-        echo 0 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/down_rate_limit_us
+	echo 500 > /sys/devices/system/cpu/cpufreq/policy7/schedutil/up_rate_limit_us
+    echo 5000 > /sys/devices/system/cpu/cpufreq/policy7/schedutil/down_rate_limit_us
 	echo 1612800 > /sys/devices/system/cpu/cpufreq/policy7/schedutil/hispeed_freq
 	echo 1 > /sys/devices/system/cpu/cpufreq/policy7/schedutil/pl
 
@@ -4919,9 +4923,6 @@ case "$target" in
         #yankelong@BSP, 2019/5/8/, add for Enable ufs performance.
         echo 0 > /sys/class/scsi_host/host0/../../../clkscale_enable
         #endif VENDOR_EDIT
-
-        echo 0-3 > /dev/cpuset/background/cpus
-        echo 0-3 > /dev/cpuset/system-background/cpus
 
         # Enable oom_reaper
 	if [ -f /sys/module/lowmemorykiller/parameters/oom_reaper ]; then
