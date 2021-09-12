@@ -118,6 +118,8 @@ on boot
     start rfs_access
 
 on property:sys.boot_completed=1
+    setprop vendor.setup.power 1
+
     # ifdef VENDOR_EDIT
     # chris.gao@SYSTEM, 2019/3/2, [GCE-9966] Optimize surfaceflinger
     write /dev/cpuset/display/cpus 4-7
