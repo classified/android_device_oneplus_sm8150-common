@@ -248,6 +248,7 @@ PRODUCT_PACKAGES += \
     init.oem_ftm.rc \
     init.qcom.class_core.sh \
     init.qcom.coex.sh \
+    init.power.rc \
     init.qcom.early_boot.sh \
     init.qcom.efs.sync.sh \
     init.qcom.factory.rc \
