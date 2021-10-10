@@ -29,7 +29,9 @@ using android::Rect;
 using android::ScreenshotClient;
 using android::sp;
 using android::SurfaceComposerClient;
-using namespace android;
+using android::DisplayCaptureArgs;
+using android::IScreenCaptureListener;
+using android::gui::ScreenCaptureResults;
 
 constexpr int ALS_RADIUS = 64;
 constexpr int SCREENSHOT_INTERVAL = 1;
@@ -42,25 +44,23 @@ void updateScreenBuffer() {
 
     struct timespec now;
     clock_gettime(CLOCK_MONOTONIC, &now);
-    sp<SyncScreenCaptureListener> captureListener = new SyncScreenCaptureListener();
-    gui::ScreenCaptureResults captureResults;
+    IScreenCaptureListener *captureListener;
+    ScreenCaptureResults captureResults;
 
     if (now.tv_sec - lastScreenUpdate >= SCREENSHOT_INTERVAL) {
-        // Update Screenshot at most every second
         DisplayCaptureArgs captureArgs;
         captureArgs.displayToken = SurfaceComposerClient::getInternalDisplayToken();
-        captureArgs.pixelFormat = ui::PixelFormat::RGBA_8888;
+        captureArgs.pixelFormat = android::ui::PixelFormat::RGBA_8888;
         captureArgs.sourceCrop = Rect(ALS_POS_X - ALS_RADIUS, ALS_POS_Y - ALS_RADIUS, ALS_POS_X + ALS_RADIUS, ALS_POS_Y + ALS_RADIUS);
         captureArgs.width = ALS_RADIUS * 2;
         captureArgs.height = ALS_RADIUS * 2;
         captureArgs.useIdentityTransform = true;
-        status_t result = ScreenshotClient::captureDisplay(captureArgs, captureListener);
-        if (result == NO_ERROR) {
-            captureResults = captureListener->waitForResults();
-            if (captureResults.result == NO_ERROR) outBuffer = captureResults.buffer;
-        }
+        ScreenshotClient::captureDisplay(
+                captureArgs, captureListener);
+        captureListener->onScreenCaptureCompleted(captureResults);
         lastScreenUpdate = now.tv_sec;
     }
+    outBuffer = captureResults.buffer;
 
     uint8_t *out;
     auto resultWidth = outBuffer->getWidth();
