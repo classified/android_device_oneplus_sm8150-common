@@ -4,6 +4,7 @@ ro.audio.monitorRotation=true
 
 # Bluetooth
 bt.max.hfpclient.connections=1
+persist.vendor.bt.a2dp.aac_whitelist=false
 vendor.bluetooth.soc=cherokee
 
 # Bluetooth
