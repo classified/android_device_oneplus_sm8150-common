@@ -427,7 +427,7 @@ PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service
 
 # VNDK
-include $(LOCAL_PATH)/interfaces-vndk.mk
+PRODUCT_EXTRA_VNDK_VERSIONS := 30
 
 # Wifi
 PRODUCT_PACKAGES += \
