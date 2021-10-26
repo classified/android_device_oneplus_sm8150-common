@@ -378,8 +378,7 @@ PRODUCT_PACKAGES += \
     libOmxVdec \
     libOmxVenc \
     libOmxVidcCommon \
-    libstagefrighthw \
-    libstagefright_softomx.vendor
+    libstagefrighthw
 
 # Power
 PRODUCT_PACKAGES += \
