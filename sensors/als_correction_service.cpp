@@ -93,8 +93,8 @@ void updateScreenBuffer() {
 }
 
 int main() {
-    ProcessState::self()->setThreadPoolMaxThreadCount(0);
-    ProcessState::self()->startThreadPool();
+    android::ProcessState::self()->setThreadPoolMaxThreadCount(0);
+    android::ProcessState::self()->startThreadPool();
 
     struct sigaction action{};
     sigfillset(&action.sa_mask);
