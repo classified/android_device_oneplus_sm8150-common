@@ -27,6 +27,7 @@
     <string-array name="config_deviceKeyHandlerClasses" translatable="false">
         <item>org.lineageos.settings.device.KeyHandler</item>
         <item>org.lineageos.camerahelper.KeyHandler</item>
+        <item>com.derp.device.DeviceSettings.TouchKeyHandler</item>
     </string-array>
 
     <!-- The list of vendor package signatures that should also be considered
