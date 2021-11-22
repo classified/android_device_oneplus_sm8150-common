@@ -31,9 +31,7 @@ android_app {
 
     static_libs: [
         "androidx.core_core",
-        "androidx.preference_preference",
-        "org.lineageos.settings.resources",
-        "VendorSupport-preference",
+        "androidx.preference_preference"
     ],
 
     resource_dirs: ["res"],

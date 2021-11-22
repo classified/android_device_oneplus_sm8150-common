@@ -14,7 +14,7 @@
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           android:sharedUserId="android.uid.system"
-          package="com.derp.device.DeviceSettings"
+          package="com.pixel.device.DeviceSettings"
           android:versionCode="1"
           android:versionName="1.0" >
 
@@ -24,9 +24,9 @@
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.CAMERA" />
 
-    <protected-broadcast android:name="com.derp.device.DeviceSettings.UPDATE_SETTINGS" />
+    <protected-broadcast android:name="com.pixel.device.DeviceSettings.UPDATE_SETTINGS" />
 
-    <protected-broadcast android:name="com.derp.device.DeviceSettings.UPDATE_SLIDER_POSITION" />
+    <protected-broadcast android:name="com.pixel.device.DeviceSettings.UPDATE_SLIDER_POSITION" />
 
     <uses-sdk
         android:minSdkVersion="28"
@@ -36,7 +36,7 @@
         android:icon="@drawable/ic_settings_device"
         android:label="@string/device_title">
 
-        <receiver android:name="com.derp.device.DeviceSettings.Startup" android:exported="true">
+        <receiver android:name="com.pixel.device.DeviceSettings.Startup" android:exported="true">
             <intent-filter android:priority="1000" >
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
@@ -85,7 +85,7 @@
         <!-- Search indexing -->
         <provider
             android:name=".ConfigPanelSearchIndexablesProvider"
-            android:authorities="com.derp.device"
+            android:authorities="com.pixel.device"
             android:multiprocess="false"
             android:grantUriPermissions="true"
             android:permission="android.permission.READ_SEARCH_INDEXABLES"

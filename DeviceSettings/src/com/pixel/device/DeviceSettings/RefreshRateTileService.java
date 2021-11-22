@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.derp.device.DeviceSettings;
+package com.pixel.device.DeviceSettings;
 
 import android.content.Context;
 import android.provider.Settings;

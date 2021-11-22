@@ -15,7 +15,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *
 */
-package com.derp.device.DeviceSettings;
+package com.pixel.device.DeviceSettings;
 
 import android.content.ContentResolver;
 import android.content.Context;
