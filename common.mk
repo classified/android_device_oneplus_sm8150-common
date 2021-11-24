@@ -47,8 +47,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.location.gps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.location.gps.xml \
     frameworks/native/data/etc/android.hardware.nfc.hce.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.hce.xml \
     frameworks/native/data/etc/android.hardware.nfc.hcef.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.hcef.xml \
-    frameworks/native/data/etc/android.hardware.nfc.ese.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.ese.xml \
-    frameworks/native/data/etc/android.hardware.nfc.uicc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.uicc.xml \
     frameworks/native/data/etc/android.hardware.nfc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.xml \
     frameworks/native/data/etc/android.hardware.opengles.aep.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.opengles.aep.xml \
     frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.accelerometer.xml \
@@ -77,7 +75,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.sip.voip.xml \
     frameworks/native/data/etc/android.software.verified_boot.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.verified_boot.xml \
     frameworks/native/data/etc/android.software.vulkan.deqp.level-2020-03-01.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.vulkan.deqp.level.xml \
-    frameworks/native/data/etc/com.android.nfc_extras.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.android.nfc_extras.xml \
     frameworks/native/data/etc/com.nxp.mifare.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.nxp.mifare.xml
 
 # ANT+
@@ -92,11 +89,9 @@ PRODUCT_PACKAGES += \
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio.service \
-    android.hardware.audio@4.0.vendor \
-    android.hardware.audio@6.0-impl \
-    android.hardware.audio.effect@6.0-impl \
-    android.hardware.soundtrigger@2.1-impl \
-    android.hardware.bluetooth.audio@2.0-impl \
+    android.hardware.audio@6.0-impl:32 \
+    android.hardware.audio.effect@6.0-impl:32 \
+    android.hardware.soundtrigger@2.1-impl:32 \
     audio.a2dp.default \
     audio.bluetooth.default \
     audio.r_submix.default \
@@ -132,8 +127,8 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/a2dp_in_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_in_audio_policy_configuration.xml \
-    frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration.xml \
-    frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml
+    frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
+    frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration.xml:/$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration.xml
 
 # Boot control
 PRODUCT_PACKAGES += \
@@ -148,9 +143,6 @@ PRODUCT_PACKAGES_DEBUG += \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
-    android.hardware.bluetooth.a2dp@1.0.vendor \
-    android.hardware.bluetooth@1.0.vendor \
-    android.hardware.bluetooth@1.1.vendor \
     liba2dpoffload \
     libbthost_if \
     android.hardware.bluetooth.audio@2.0:32 \
@@ -247,7 +239,6 @@ PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := verify
 
 # DRM
 PRODUCT_PACKAGES += \
-    android.hardware.drm@1.4.vendor \
     android.hardware.drm@1.4-service.clearkey
 
 # fastbootd
@@ -256,17 +247,10 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.3-service.oneplus
-
-# Gatekeeper
-PRODUCT_PACKAGES += \
-    android.hardware.gatekeeper@1.0.vendor
+    android.hardware.biometrics.fingerprint@2.3-service.oneplus \
+    vendor.oneplus.hardware.display@1.0.vendor
 
 # GPS
-PRODUCT_PACKAGES += \
-    android.hardware.gnss@1.0.vendor \
-    android.hardware.gnss@2.1.vendor
-
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps/apdr.conf:$(TARGET_COPY_OUT_VENDOR)/etc/apdr.conf \
     $(LOCAL_PATH)/configs/gps/flp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/flp.conf \
@@ -308,13 +292,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
 
-# IRQ
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/msm_irqbalance.conf:$(TARGET_COPY_OUT_VENDOR)/etc/msm_irqbalance.conf
-
-# Keymaster
-PRODUCT_PACKAGES += \
-    android.hardware.keymaster@4.1.vendor
+# LiveDisplay
+# PRODUCT_PACKAGES += \
+#    vendor.lineage.livedisplay@2.1-service.oneplus_msmnile
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -322,8 +302,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml \
     $(LOCAL_PATH)/configs/media_codecs_vendor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_vendor.xml \
     $(LOCAL_PATH)/configs/media_codecs_vendor_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_vendor_audio.xml \
-    $(LOCAL_PATH)/configs/media_profiles_vendor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_vendor.xml \
-    $(LOCAL_PATH)/configs/system_properties.xml:$(TARGET_COPY_OUT_VENDOR)/etc/system_properties.xml
+    $(LOCAL_PATH)/configs/media_profiles.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles.xml \
+    $(LOCAL_PATH)/configs/media_profiles.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_vendor.xml \
+    $(LOCAL_PATH)/configs/media_profiles.xml:$(TARGET_COPY_OUT_ODM)/etc/media_profiles_V1_0.xml
 
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml \
@@ -336,22 +317,14 @@ PRODUCT_COPY_FILES += \
 
 # Net
 PRODUCT_PACKAGES += \
-    android.system.net.netd@1.1.vendor \
     netutils-wrapper-1.0
-
-# Neural networks
-PRODUCT_PACKAGES += \
-    android.hardware.neuralnetworks@1.3.vendor
 
 # NFC
 PRODUCT_PACKAGES += \
     NfcNci \
-    Tag \
     SecureElement \
-    android.hardware.nfc@1.2-service \
-    android.hardware.secure_element@1.1-service-disabled \
-    android.hardware.secure_element@1.1.vendor \
-    android.hardware.secure_element@1.2.vendor \
+    Tag \
+    android.hardware.nfc@1.2-service
 
 # OMX
 PRODUCT_PACKAGES += \
@@ -371,11 +344,11 @@ PRODUCT_PACKAGES += \
     libOmxVdec \
     libOmxVenc \
     libOmxVidcCommon \
-    libstagefrighthw
+    libstagefrighthw \
+    libstagefright_softomx.vendor
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.2.vendor \
     android.hardware.power-service-qti \
     vendor.qti.hardware.perf@2.2.vendor:64
 
@@ -386,19 +359,8 @@ PRODUCT_PACKAGES += \
     libqti_vndfwk_detect.vendor \
     libvndfwk_detect_jni.qti.vendor
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/privapp-permissions-qti.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-qti.xml \
-    $(LOCAL_PATH)/configs/qti_whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/qti_whitelist.xml
-
 # RIL
 PRODUCT_PACKAGES += \
-    android.hardware.radio@1.2 \
-    android.hardware.radio@1.5.vendor \
-    android.hardware.radio.config@1.0 \
-    android.hardware.radio.config@1.2.vendor \
-    android.hardware.radio.deprecated@1.0.vendor \
-    android.hardware.secure_element@1.0 \
-    android.hardware.secure_element@1.0.vendor \
     libprotobuf-cpp-full \
     libril_shim \
     librmnetctl \
@@ -415,7 +377,6 @@ PRODUCT_COPY_FILES += \
 # Sensors
 PRODUCT_PACKAGES += \
     als_correction_service.oneplus_msmnile \
-    android.frameworks.sensorservice@1.0.vendor \
     android.hardware.sensors@2.0-service.oneplus_msmnile \
     libsensorndkbridge
 
@@ -441,6 +402,10 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/privapp-permissions-qti.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-qti.xml
 
+# Touch
+#PRODUCT_PACKAGES += \
+#    vendor.lineage.touch@1.0-service.oneplus
+
 # tri-state key
 PRODUCT_PACKAGES += \
     KeyHandler \
@@ -460,12 +425,11 @@ PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service
 
 # VNDK
-PRODUCT_EXTRA_VNDK_VERSIONS := 30
+include $(LOCAL_PATH)/interfaces-vndk.mk
 
 # Wifi
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
-    android.hardware.wifi@1.5.vendor \
     hostapd \
     libwpa_client \
     libwifi-hal-ctrl \
@@ -488,14 +452,6 @@ PRODUCT_COPY_FILES += \
 # WiFi
 PRODUCT_PACKAGES += \
     WifiResCommon
-
-# WiFi Display
-PRODUCT_PACKAGES += \
-    libnl \
-    libwfdaac_vendor
-
-#PRODUCT_BOOT_JARS += \
-#    WfdCommon
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.force_hwc_copy_for_virtual_displays=true \

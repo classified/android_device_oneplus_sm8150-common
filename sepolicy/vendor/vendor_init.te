@@ -24,5 +24,10 @@ set_prop(vendor_init, vendor_disable_spu_prop)
 # Allow vendor_init to get vendor_tee_listener_prop
 get_prop(vendor_init, vendor_tee_listener_prop)
 
-# Allow vendor_init to handle symlinks for block_device
+# Allow vendor_init to set vendor_nfc_prop
+set_prop(vendor_init, vendor_nfc_prop)
+
+# Allow vendor_init to set vendor_db_security_prop
+get_prop(vendor_init, vendor_db_security_prop)
+
 allow vendor_init block_device:lnk_file setattr;
