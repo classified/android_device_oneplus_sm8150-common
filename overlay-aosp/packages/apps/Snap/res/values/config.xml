@@ -14,11 +14,18 @@
      limitations under the License.
 -->
 
-<!-- Camera app resources that may need to be customized
-     for different hardware or product builds. -->
-<resources>
-    <!-- Opens back camera using openLegacy() and forces api v1 -->
-    <bool name="back_camera_open_legacy">false</bool>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Defines the location of the fingerprint sensor on the device
+         0 = back
+         1 = front
+         2 = left side
+         3 = right side
+    -->
+    <integer name="config_fingerprintSensorLocation">1</integer>
+
+    <!-- Whether to show min refresh rate in display settings -->
+    <bool name="config_show_refresh_rate_controls">true</bool>
 
     <!-- Opens front camera using openLegacy() and forces api v1 -->
     <bool name="front_camera_open_legacy">false</bool>
