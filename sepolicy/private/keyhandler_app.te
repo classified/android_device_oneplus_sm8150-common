@@ -10,3 +10,5 @@ allow keyhandler_app app_api_service:service_manager find;
 # Allow keyhandler_app read and write /data/data subdirectory
 allow keyhandler_app system_app_data_file:dir create_dir_perms;
 allow keyhandler_app system_app_data_file:{ file lnk_file } create_file_perms;
+
+allow keyhandler_app zygote:unix_stream_socket { getopt };
