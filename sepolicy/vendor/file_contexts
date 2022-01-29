@@ -1,9 +1,9 @@
 # Binaries
-/(vendor|system/vendor)/bin/dashd                      u:object_r:dashd_exec:s0
-/(vendor|system/vendor)/bin/opf-service                u:object_r:opf_exec:s0
+/(vendor|system/vendor)/bin/dashd                   u:object_r:dashd_exec:s0
+/(vendor|system/vendor)/bin/opf-service             u:object_r:opf_exec:s0
 /(vendor|system/vendor)/bin/tri-state-key-calibrate    u:object_r:tri-state-key-calibrate_exec:s0
-/(vendor|system/vendor)/bin/vl53l1_daemon_main         u:object_r:vl53l1_daemon_main_exec:s0
-/(vendor|system/vendor)/bin/wifi-mac-generator         u:object_r:wifi-mac-generator_exec:s0
+/(vendor|system/vendor)/bin/vl53l1_daemon_main      u:object_r:vl53l1_daemon_main_exec:s0
+/(vendor|system/vendor)/bin/wifi-mac-generator      u:object_r:wifi-mac-generator_exec:s0
 
 # Block devices
 /dev/block/platform/soc/1d84000\.ufshc/by-name/config         u:object_r:frp_block_device:s0
@@ -31,15 +31,15 @@
 /dev/stmvl53l1_ranging    u:object_r:vl53l1_device:s0
 
 # HALs
-/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.3-service\.oneplus           u:object_r:hal_fingerprint_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.neuralnetworks@1\.1-service-qti                         u:object_r:vendor_hal_neuralnetworks_default_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor\.oneplus\.hardware\.camera@1\.0-service                             u:object_r:hal_cameraHIDL_default_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor\.oneplus\.hardware\.CameraMDMHIDL@1\.0-service                      u:object_r:hal_cameraHIDL_default_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor\.oneplus\.hardware\.display@1\.0-service                            u:object_r:hal_display_default_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor\.oneplus\.hardware\.hdcpkey@1\.0-service                            u:object_r:hal_hdcpkey_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.3-service\.oneplus                   u:object_r:hal_fingerprint_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.neuralnetworks@1\.1-service-qti                                 u:object_r:vendor_hal_neuralnetworks_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.oneplus\.hardware\.camera@1\.0-service                                     u:object_r:hal_cameraHIDL_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.oneplus\.hardware\.CameraMDMHIDL@1\.0-service                              u:object_r:hal_cameraHIDL_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.oneplus\.hardware\.display@1\.0-service                                    u:object_r:hal_display_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.oneplus\.hardware\.hdcpkey@1\.0-service                                    u:object_r:hal_hdcpkey_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.oneplus\.hardware\.ifaa@2\.0-service                               u:object_r:hal_ifaa_default_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor\.oneplus\.hardware\.param@1\.0-service                              u:object_r:hal_param_default_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.vibrator\.service\.oneplus                          u:object_r:hal_vibrator_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.oneplus\.hardware\.param@1\.0-service                                      u:object_r:hal_param_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.vibrator\.service\.oneplus                                  u:object_r:hal_vibrator_default_exec:s0
 
 # OP1, OP2 files
 /mnt/vendor/op1(/.*)?    u:object_r:op1_file:s0
@@ -77,3 +77,9 @@
 /sys/devices/virtual/diag/diag/wakeup[0-9]+(/.*)? u:object_r:sysfs_wakeup:s0
 /sys/devices/virtual/misc/(msm_aac|msm_alac|msm_amrnb|msm_amrwb|msm_amrwbplus|msm_ape|msm_evrc|msm_g711alaw|msm_g711mlaw|msm_mp3|msm_multi_aac|msm_qcelp|msm_wma|msm_wmapro)/wakeup[0-9]+(/.*)? u:object_r:sysfs_wakeup:s0
 /sys/devices/virtual/wakeup/wakeup[0-9]+(/.*)? u:object_r:sysfs_wakeup:s0
+
+# Sys files (Brightness)
+/sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-05/c440000.qcom,spmi:qcom,pm8150l@5:qcom,leds@d300/leds/led:torch_[0-9]/brightness u:object_r:sysfs_oem:s0
+/sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-05/c440000.qcom,spmi:qcom,pm8150l@5:qcom,leds@d300/leds/led:switch_[0-9]/brightness u:object_r:sysfs_oem:s0
+/sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-02/c440000.qcom,spmi:qcom,pm8350c@2:qcom,flash_led@ee00/leds/led:torch_[0-9]/brightness u:object_r:sysfs_oem:s0
+/sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-02/c440000.qcom,spmi:qcom,pm8350c@2:qcom,flash_led@ee00/leds/led:switch_[0-9]/brightness u:object_r:sysfs_oem:s0
