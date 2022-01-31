@@ -12,3 +12,6 @@ allow keyhandler_app system_app_data_file:dir create_dir_perms;
 allow keyhandler_app system_app_data_file:{ file lnk_file } create_file_perms;
 
 allow keyhandler_app zygote:unix_stream_socket { getopt };
+
+allow keyhandler_app user_profile_root_file:dir search;
+allow keyhandler_app system_data_file:dir search;
