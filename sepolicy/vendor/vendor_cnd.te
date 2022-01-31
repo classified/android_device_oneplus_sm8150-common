@@ -1,0 +1,2 @@
+allow vendor_cnd wifi_hal_prop:file { map };
+allow vendor_cnd telephony_config_prop:file { getattr map open read };

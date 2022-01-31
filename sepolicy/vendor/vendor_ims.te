@@ -1,0 +1,1 @@
+allow vendor_ims telephony_config_prop:file { getattr map open read };

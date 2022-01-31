@@ -25,3 +25,6 @@ allow hal_camera_default input_device:dir read;
 
 allow hal_camera_default aac_drc_prop:file { map };
 allow hal_camera_default ab_update_gki_prop:file { map };
+
+allow hal_camera_default aac_drc_prop:file { getattr open };
+allow hal_camera_default ab_update_gki_prop:file { getattr open };
