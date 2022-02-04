@@ -72,6 +72,8 @@ on early-init
     exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules msm_11ad_proxy
 
 on init
+    # Change permissions for diag lib.
+    chmod 0666 /dev/diag
 
     # Support legacy paths
     symlink /sdcard /mnt/sdcard
@@ -90,6 +92,8 @@ on init
 
 on post-fs
     chmod 0755 /sys/kernel/debug/tracing
+    # Vibrator
+    chown system system /sys/devices/platform/soc/89c000.i2c/i2c-2/2-005a/leds/vibrator/level
 
 on early-boot
     # set RLIMIT_MEMLOCK to 64MB
@@ -898,6 +902,7 @@ service diag_mdlog_system_stop /system/system_ext/bin/diag_mdlog_system -k
     class late_start
     user shell
     group system oem_2901 sdcard_rw sdcard_r media_rw
+    task_profiles ServiceCapacityLow
     disabled
     oneshot
 
