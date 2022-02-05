@@ -65,8 +65,6 @@ on early-init
     exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules msm_11ad_proxy
 
 on init
-    # Change permissions for diag lib.
-    chmod 0666 /dev/diag
 
     # Support legacy paths
     symlink /sdcard /mnt/sdcard
@@ -85,8 +83,6 @@ on init
 
 on post-fs
     chmod 0755 /sys/kernel/debug/tracing
-    # Vibrator
-    chown system system /sys/devices/platform/soc/89c000.i2c/i2c-2/2-005a/leds/vibrator/level
 
 on early-boot
     # set RLIMIT_MEMLOCK to 64MB
@@ -750,6 +746,7 @@ service qcom-post-boot /vendor/bin/init.qcom.post_boot.sh
     group root system wakelock graphics
     disabled
     oneshot
+    seclabel u:r:vendor_qti_init_shell:s0
 
 service qti-testscripts /system/bin/sh /product/etc/init.qcom.testscripts.sh
     class late_start
