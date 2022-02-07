@@ -1,0 +1,1 @@
+allow vendor_adpl telephony_config_prop:file read;
