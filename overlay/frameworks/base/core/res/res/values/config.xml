@@ -512,4 +512,7 @@
 
      <!-- Whether device has physical tri state switch -->
     <bool name="config_hasAlertSlider">true</bool>
+
+    <!-- Whether the display blanks itself when transition from a doze to a non-doze state -->
+    <bool name="config_displayBlanksAfterDoze">false</bool>
 </resources>
