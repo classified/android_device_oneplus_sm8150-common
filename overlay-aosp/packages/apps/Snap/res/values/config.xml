@@ -24,9 +24,6 @@
     -->
     <integer name="config_fingerprintSensorLocation">1</integer>
 
-    <!-- Whether to show min refresh rate in display settings -->
-    <bool name="config_show_refresh_rate_controls">true</bool>
-
     <!-- Opens front camera using openLegacy() and forces api v1 -->
     <bool name="front_camera_open_legacy">false</bool>
 </resources>
