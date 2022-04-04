@@ -6,10 +6,10 @@
     "remote"      : "pixel-devices"
   },
   {
-    "repository"  : "classified/vendor_oneplus_sm8150-common",
+    "repository"  : "vendor_oneplus_sm8150-common",
     "target_path" : "vendor/oneplus/sm8150-common",
     "branch"      : "twelve",
-    "remote"      : "github"
+    "remote"      : "pixel-devices-blobs"
   },
   {
     "repository"  : "classified/hardware_oneplus",
