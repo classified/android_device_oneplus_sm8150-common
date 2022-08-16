@@ -108,7 +108,9 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service_64 \
     libcamera_metadata_shim \
+    libcamera2ndk_vendor \
     libxml2 \
+    vendor.oplus.hardware.cameraMDM@2.0.vendor:64 \
     vendor.qti.hardware.camera.device@1.0.vendor
 
 PRODUCT_COPY_FILES += \
@@ -312,6 +314,7 @@ PRODUCT_ENFORCE_RRO_TARGETS := *
 PRODUCT_PACKAGES += \
     CarrierConfigResCommon \
     FrameworksResTarget \
+    OnePlusCameraResCommon \
     OPlusFrameworksResCommon \
     BoostFrameworkOverlay
 
@@ -326,6 +329,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
     QPerformance \
     UxPerformance
+
+# Oplus-fwk
+PRODUCT_PACKAGES += \
+    oplus-fwk
+
+PRODUCT_BOOT_JARS += \
+    oplus-fwk
 
 # Power
 PRODUCT_PACKAGES += \
@@ -474,6 +484,9 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JARS += \
     WfdCommon
+
+# Inherit from the OnePlus Camera makefile.
+$(call inherit-product, vendor/oneplus/apps/sm8150/camera-vendor.mk)
 
 # Inherit from the proprietary files makefile.
 $(call inherit-product, vendor/oneplus/sm8150-common/sm8150-common-vendor.mk)
