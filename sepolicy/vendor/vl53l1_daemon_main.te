@@ -13,3 +13,4 @@ allow vl53l1_daemon_main self:{
 # Allow vl53l1_daemon_main to read and write to sysfs_vl53l1
 allow vl53l1_daemon_main sysfs_vl53l1:dir search;
 allow vl53l1_daemon_main sysfs_vl53l1:file rw_file_perms;
+allow vl53l1_daemon_main sysfs:file { read open };
