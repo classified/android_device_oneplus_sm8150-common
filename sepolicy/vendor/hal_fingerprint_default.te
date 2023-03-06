@@ -1,1 +1,5 @@
 allow hal_fingerprint_default vendor_sysfs_battery_supply:dir { search };
+
+# Perf Sepolicy
+allow hal_fingerprint_default vendor_hal_perf_default:binder call;
+allow hal_fingerprint_default vendor_hal_perf_hwservice:hwservice_manager find;
