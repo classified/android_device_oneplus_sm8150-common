@@ -6,6 +6,3 @@ genfscon sysfs /devices/platform/soc/a600000.ssusb/usb_data_enabled    u:object_
 
 # Power
 genfscon proc /sys/kernel/sched_energy_aware u:object_r:proc_sched_energy_aware:s0
-
-# UFS
-genfscon sysfs /devices/platform/soc/1d84000.ufshc/clkgate_enable               u:object_r:vendor_sysfs_scsi_host:s0
