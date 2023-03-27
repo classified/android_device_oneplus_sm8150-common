@@ -11,7 +11,7 @@ allow hal_power_default vendor_sysfs_devfreq:file rw_file_perms;
 allow hal_power_default vendor_sysfs_graphics:file r_file_perms;
 allow hal_power_default vendor_sysfs_kgsl:{ file lnk_file } rw_file_perms;
 allow hal_power_default vendor_sysfs_scsi_host:file rw_file_perms;
-allow hal_power_default sysfs:file { read };
+allow hal_power_default sysfs:file { read open };
 
 # To get/set powerhal state property
 set_prop(hal_power_default, vendor_power_prop)

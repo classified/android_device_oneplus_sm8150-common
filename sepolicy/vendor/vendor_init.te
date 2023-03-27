@@ -1,5 +1,6 @@
 allow vendor_init proc_dirty:file { write };
 allow vendor_init proc_sched_energy_aware:file w_file_perms;
+allow vendor_init proc_watermark_scale_factor:file { write };
 
 # To set powerhal init property
 set_prop(vendor_init, vendor_power_prop)
