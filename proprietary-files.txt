@@ -781,6 +781,15 @@ vendor/lib64/libOmxVpp.so
 vendor/lib64/libOmxWmaDec.so
 vendor/lib64/libswvdec.so
 
+# Perf - OPLUS
+odm/lib/vendor.oplus.hardware.performance@1.0.so
+odm/lib64/vendor.oplus.hardware.performance@1.0.so
+-odm/framework/vendor.oplus.hardware.performance-V1.0-java.jar
+odm/bin/hw/vendor.oplus.hardware.performance@1.0-service
+odm/etc/init/vendor.oplus.hardware.performance@1.0-service.rc
+system/lib/vendor.oplus.hardware.performance@1.0.so
+vendor/etc/smomo_setting.xml
+
 # Perf (configs) - from  OnePlus
 vendor/etc/lm/AdaptLaunchFeature.xml|ad4516342729e79a8914762c2737f7faa08b1e9d
 vendor/etc/lm/AppClassifierFeature.xml|102e4291357dd384c0f474d4192370e25123c5e7
