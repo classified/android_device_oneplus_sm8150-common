@@ -2,8 +2,11 @@
 
 # ADSP
 vendor/bin/adsprpcd
+vendor/bin/dspservice
 vendor/etc/init/vendor.qti.adsprpc-service.rc
+vendor/etc/init/vendor.qti.hardware.dsp@1.0-service.rc
 vendor/etc/seccomp_policy/vendor.qti.hardware.dsp.policy
+vendor/lib/libadsp_default_listener.so
 vendor/lib/vendor.qti.hardware.dsp@1.0.so
 vendor/lib64/libadsp_default_listener.so
 vendor/lib64/vendor.qti.hardware.dsp@1.0.so
@@ -49,6 +52,14 @@ vendor/lib/soundfx/libqcbassboost.so
 vendor/lib/soundfx/libqcreverb.so
 vendor/lib/soundfx/libqcvirt.so
 vendor/lib/soundfx/libshoebox.so
+vendor/lib/libbatterylistener.so
+vendor/lib/libcirrusspkrprot.so
+vendor/lib/libcomprcapture.so
+vendor/lib/libexthwplugin.so
+vendor/lib/libhdmiedid.so
+vendor/lib/libhfp.so
+vendor/lib/libaudioparsers.so
+vendor/lib/libhdmipassthru.so
 vendor/lib/liba2dpoffload.so
 vendor/lib/libacdb-fts.so
 vendor/lib/libacdbloader.so
@@ -61,9 +72,50 @@ vendor/lib/libaudio_log_utils.so
 vendor/lib/libaudioconfigstore.so
 vendor/lib/libopf.so
 vendor/lib/libqtigef.so
+vendor/lib/libsndmonitor.so
+vendor/lib/libspkrprot.so
 vendor/lib/libssrec.so
 vendor/lib/vendor.qti.hardware.audiohalext@1.0.so
 vendor/lib64/libadsprpc.so
+vendor/lib64/libaudioparsers.so
+vendor/lib64/libhdmipassthru.so
+vendor/lib64/libaudio_log_utils.so
+vendor/lib64/libaudioconfigstore.so
+vendor/lib64/hw/vendor.qti.hardware.audiohalext@1.0-impl.so
+vendor/lib64/vendor.qti.hardware.audiohalext@1.0.so
+
+# Audio FX modules
+system_ext/etc/permissions/audiosphere.xml
+system_ext/framework/audiosphere.jar
+vendor/lib/soundfx/libaudiopreprocessing.so
+vendor/lib/soundfx/libbundlewrapper.so
+vendor/lib/soundfx/libdownmix.so
+vendor/lib/soundfx/libdynproc.so
+vendor/lib/soundfx/libeffectproxy.so
+vendor/lib/soundfx/libldnhncr.so
+vendor/lib/soundfx/libqcompostprocbundle.so
+vendor/lib/soundfx/libqcomvisualizer.so
+vendor/lib/soundfx/libqcomvoiceprocessing.so
+vendor/lib/soundfx/libreverbwrapper.so
+vendor/lib/soundfx/libvisualizer.so
+vendor/lib/soundfx/libvolumelistener.so
+vendor/lib64/soundfx/libasphere.so
+vendor/lib64/soundfx/libaudiopreprocessing.so
+vendor/lib64/soundfx/libbundlewrapper.so
+vendor/lib64/soundfx/libdownmix.so
+vendor/lib64/soundfx/libdynproc.so
+vendor/lib64/soundfx/libeffectproxy.so
+vendor/lib64/soundfx/libldnhncr.so
+vendor/lib64/soundfx/libqcbassboost.so
+vendor/lib64/soundfx/libqcompostprocbundle.so
+vendor/lib64/soundfx/libqcomvisualizer.so
+vendor/lib64/soundfx/libqcomvoiceprocessing.so
+vendor/lib64/soundfx/libqcreverb.so
+vendor/lib64/soundfx/libqcvirt.so
+vendor/lib64/soundfx/libreverbwrapper.so
+vendor/lib64/soundfx/libshoebox.so
+vendor/lib64/soundfx/libvisualizer.so
+vendor/lib64/soundfx/libvolumelistener.so
 
 # Bluetooth
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
@@ -140,6 +192,7 @@ vendor/lib64/libvl53l1_daemon.so
 vendor/lib64/sensors.hal.tof.so
 vendor/lib64/vendor.oneplus.hardware.CameraMDMHIDL@1.0.so
 vendor/lib64/vendor.oneplus.hardware.camera@1.0.so
+vendor/lib64/libSTDualCamCaptureWT.so
 
 # Camera firmware
 vendor/firmware/CAMERA_ICP.elf
@@ -227,6 +280,21 @@ vendor/bin/hw/vendor.qti.hardware.capabilityconfigstore@1.0-service
 vendor/etc/init/vendor.qti.hardware.capabilityconfigstore@1.0-service.rc
 vendor/lib/hw/vendor.qti.hardware.capabilityconfigstore@1.0-impl.so
 vendor/lib64/hw/vendor.qti.hardware.capabilityconfigstore@1.0-impl.so
+
+# CVP
+system_ext/lib/vendor.qti.hardware.cvp@1.0-adapter-helper.so
+system_ext/lib/vendor.qti.hardware.cvp@1.0.so
+system_ext/lib64/vendor.qti.hardware.cvp@1.0-adapter-helper.so
+system_ext/lib64/vendor.qti.hardware.cvp@1.0.so
+vendor/lib/libcvp.so
+vendor/lib/libcvp_common.so
+vendor/lib/libcvp_stub.so
+vendor/lib/libcvpcpuRev_skel.so
+vendor/lib/vendor.qti.hardware.cvp@1.0.so
+vendor/lib64/libcvp.so
+vendor/lib64/libcvp_stub.so
+vendor/lib64/libcvpcpuRev_skel.so
+vendor/lib64/vendor.qti.hardware.cvp@1.0.so
 
 # Display
 vendor/bin/hw/vendor.oneplus.hardware.display@1.0-service
@@ -428,6 +496,20 @@ vendor/lib64/vendor.qti.gnss@3.0.so
 vendor/lib64/vendor.qti.gnss@4.0-service.so
 vendor/lib64/vendor.qti.gnss@4.0.so
 
+# HBTP
+vendor/bin/hbtp_daemon
+vendor/etc/hbtp/hbtpcfg_sdm855_801s_4k.dat
+vendor/etc/hbtp/loader.cfg
+vendor/etc/hbtp/qtc801s.bin
+vendor/lib/libfastrpc_utf_stub.so
+vendor/lib/libhbtpclient.so
+vendor/lib/libhbtpdsp.so
+vendor/lib/libhbtpfrmwk.so
+vendor/lib64/libfastrpc_utf_stub.so
+vendor/lib64/libhbtpclient.so
+vendor/lib64/libhbtpdsp.so
+vendor/lib64/libhbtpfrmwk.so
+
 # HDCP
 vendor/bin/hw/vendor.oneplus.hardware.hdcpkey@1.0-service
 vendor/etc/init/vendor.oneplus.hardware.hdcpkey@1.0-service.rc
@@ -530,16 +612,22 @@ vendor/bin/msm_irqbalance
 vendor/etc/msm_irqbalance.conf
 
 # Keymaster
+vendor/bin/hw/android.hardware.keymaster@3.0-service-qti
 vendor/bin/hw/android.hardware.keymaster@4.0-service-qti
+vendor/bin/hw/android.hardware.keymaster@4.0-strongbox-service-qti
+vendor/bin/hw/android.hardware.keymaster@4.1-service-qti
 vendor/etc/init/android.hardware.keymaster@4.0-service-qti.rc
+vendor/lib64/hw/android.hardware.keymaster@3.0-impl-qti.so
 vendor/lib64/libkeymasterdeviceutils.so
 vendor/lib64/libkeymasterprovision.so
 vendor/lib64/libkeymasterutils.so
 vendor/lib64/libqtikeymaster4.so
+vendor/lib64/libspcom.so
 
 # Listen
 vendor/lib/hw/sound_trigger.primary.msmnile.so
 vendor/lib/libadpcmdec.so
+vendor/lib/libcacertclient.so
 vendor/lib/libcapiv2svacnn.so
 vendor/lib/libcapiv2vop.so
 vendor/lib/libgcs-calwrapper.so
@@ -549,6 +637,26 @@ vendor/lib/libgcs.so
 vendor/lib/liblistensoundmodel2.so
 vendor/lib/libmulawdec.so
 vendor/lib/libsmwrapper.so
+vendor/lib/libjnihelper.so
+vendor/lib/vendor.qti.hardware.cacert@1.0.so
+vendor/lib/vendor.qti.voiceprint@1.0.so
+vendor/lib64/hw/sound_trigger.primary.msmnile.so
+vendor/lib64/libcapiv2svacnn.so
+vendor/lib64/libcapiv2vop.so
+vendor/lib64/libgcs-calwrapper.so
+vendor/lib64/libgcs-ipc.so
+vendor/lib64/libgcs-osal.so
+vendor/lib64/libgcs.so
+vendor/lib64/liblistensoundmodel2.so
+vendor/lib64/libmulawdec.so
+vendor/lib64/vendor.qti.hardware.cacert@1.0.so
+vendor/lib64/vendor.qti.voiceprint@1.0.so
+
+# Machine learning
+vendor/lib/libnpu.so
+vendor/lib/libopenvx.so
+vendor/lib64/libnpu.so
+vendor/lib64/libopenvx.so
 
 # Media
 system_ext/lib/libmmosal.so
@@ -631,7 +739,6 @@ vendor/etc/init/init.opf.rc
 vendor/bin/pm-proxy
 vendor/bin/pm-service
 vendor/lib64/libperipheral_client.so
-vendor/lib64/libspcom.so
 
 # Perf
 vendor/bin/hw/vendor.qti.hardware.perf@2.2-service
@@ -665,6 +772,19 @@ vendor/bin/power_off_alarm
 vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc
 vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.alarm@1.0.so
+
+# Qualcomm Display Utils
+system_ext/lib/vendor.qti.hardware.qdutils_disp@1.0.so
+system_ext/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
+vendor/lib/vendor.qti.hardware.qdutils_disp@1.0.so
+vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
+
+# Qualcomm Hardware Factory
+vendor/bin/hw/vendor.qti.hardware.factory@1.0-service
+vendor/etc/init/vendor.qti.hardware.factory@1.0-service.rc
+vendor/etc/permissions/vendor.qti.hardware.factory.xml
+vendor/lib64/vendor.qti.hardware.factory@1.0.so
+vendor/lib64/vendor.qti.hardware.factory@1.1.so
 
 # QCC
 vendor/bin/hw/vendor.qti.hardware.qccvndhal@1.0-service
@@ -866,8 +986,28 @@ vendor/etc/init/vendor.qti.hardware.soter@1.0-service.rc
 vendor/lib64/hw/vendor.qti.hardware.soter@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.soter@1.0.so
 
+# Touchpanel firmware
+vendor/firmware/tp/FW_18821_SY761.bin
+vendor/firmware/tp/FW_18857_S3706.img
+vendor/firmware/tp/FW_18865_S3706.img
+vendor/firmware/tp/FW_18865_S3706_NEW.img
+vendor/firmware/tp/FW_19801_SY761.bin
+vendor/firmware/tp/FW_19801_SY761_NEW.bin
+vendor/firmware/tp/FW_19861_SY761.bin
+vendor/firmware/tp/FW_19861_SY761_NEW.bin
+vendor/firmware/tp/LIMIT_18821_SY761.img
+vendor/firmware/tp/LIMIT_18857_S3706.img
+vendor/firmware/tp/LIMIT_18865_S3706.img
+vendor/firmware/tp/LIMIT_18865_S3706_NEW.img
+vendor/firmware/tp/LIMIT_19801_SY761.img
+vendor/firmware/tp/LIMIT_19801_SY761_NEW.img
+vendor/firmware/tp/LIMIT_19861_SY761.img
+vendor/firmware/tp/LIMIT_19861_SY761_NEW.img
+
 # Thermal engine
 vendor/bin/thermal-engine
+vendor/etc/init/init_thermal-engine.rc
+vendor/etc/thermal-engine.conf
 -vendor/lib/libthermalclient.so
 -vendor/lib64/libthermalclient.so
 
@@ -876,6 +1016,10 @@ vendor/app/TimeService/TimeService.apk
 vendor/bin/time_daemon
 vendor/etc/init/init.time_daemon.rc
 vendor/lib64/libtime_genoff.so
+
+# Touchcompanion
+vendor/lib64/vendor.qti.hardware.improvetouch.touchcompanion@1.0-service.so
+vendor/lib64/vendor.qti.hardware.improvetouch.touchcompanion@1.0.so
 
 # Trusted Execution Environment connector
 vendor/bin/hw/vendor.qti.hardware.qteeconnector@1.0-service
@@ -889,6 +1033,7 @@ vendor/lib64/vendor.qti.hardware.qteeconnector@1.0.so
 # Trusted User Interface
 vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti
 vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc
+vendor/lib/vendor.qti.hardware.tui_comm@1.0.so
 vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so
 
 # Vibrator firmware
@@ -1019,6 +1164,9 @@ vendor/lib64/libwvhidl.so
 
 # WiFi
 vendor/bin/cnss-daemon
+vendor/bin/wifilearner
+vendor/etc/init/vendor.qti.hardware.wifi.wifilearner@1.0-service.rc
+vendor/lib64/vendor.qti.hardware.wifi.wifilearner@1.0.so
 
 # WiFi Display (system) - from lemonadep - SKQ1.210821.001
 system/framework/WfdCommon.jar|9f431b56d7f38c71089333008695dd5f717e5034
@@ -1055,7 +1203,7 @@ system_ext/lib64/libwfdconfigutils.so|55b9467cc3a373c7f5725e5924d663a70dbf703c
 system_ext/lib64/libwfddisplayconfig.so|8190c64a0e3ebf5ae09dd65c5d0398cd3001b4c9
 system_ext/lib64/libwfdmminterface.so|2e49a3d58c945dc9472a0b6b250c56e60787e62e
 system_ext/lib64/libwfdmmsink.so|6d242e3cea5dc46cbd237a3b02e5596581091250
-system_ext/lib64/libwfdnative.so|ea6fb1e9a767f1dcaffde09a5fc5ab64d7f26071|33e8e82490d67fb1e4b88b3aecdf2d07f135b517
+system_ext/lib64/libwfdnative.so|33e8e82490d67fb1e4b88b3aecdf2d07f135b517
 system_ext/lib64/libwfdrtsp.so|2fb6c120db75e8b7fb4a08c48659e8bb7d0376b2
 system_ext/lib64/libwfdsinksm.so|7f8ace302737112b7b8b7862d8462e5e55a6af1c
 system_ext/lib64/libwfduibcinterface.so|1e8df941b0c2f71ad0e15e85522f177ed38e766d
