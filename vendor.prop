@@ -69,10 +69,6 @@ persist.vendor.qcom.bluetooth.scram.enabled=true
 persist.vendor.qcom.bluetooth.soc=cherokee
 ro.bluetooth.a2dp_offload.supported=true
 
-# Camera
-persist.vendor.camera.privapp.list=com.oneplus.factorymode,com.oneplus.camera,com.oem.autotest,com.oneplus.healthcheck
-ro.vendor.camera.res.fmq.size=1048576
-
 # Chipset
 ro.soc.manufacturer=Qualcomm
 ro.soc.model=SM8150

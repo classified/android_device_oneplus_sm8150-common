@@ -2,7 +2,8 @@
 persist.vendor.audio.hac.enable    u:object_r:vendor_audio_prop:s0
 
 # Camera
-vendor.camera.        u:object_r:vendor_camera_prop:s0
+vendor.camera.                      u:object_r:vendor_camera_prop:s0
+vendor.oneplus.gallery.debugStory   u:object_r:vendor_camera_prop:s0
 
 # Display
 persist.vendor.color.matrix    u:object_r:vendor_display_prop:s0
@@ -45,3 +46,6 @@ persist.vendor.sensors.enable.mag_filter         u:object_r:vendor_sensors_prop:
 persist.vendor.sensors.light.location_x          u:object_r:vendor_sensors_prop:s0
 persist.vendor.sensors.light.location_y          u:object_r:vendor_sensors_prop:s0
 persist.vendor.sensors.proximity.using_motion    u:object_r:vendor_sensors_prop:s0
+
+# Aware
+ro.vendor.aware_available          u:object_r:deviceid_prop:s0
