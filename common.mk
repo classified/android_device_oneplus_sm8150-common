@@ -399,6 +399,16 @@ PRODUCT_PACKAGES += \
 # Project ID Quota
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
+# Platform
+TARGET_BOARD_PLATFORM := msmnile
+TARGET_USE_SM8150_HALS := true
+
+# QC common
+TARGET_COMMON_QTI_COMPONENTS := \
+    adreno
+
+$(call inherit-product, device/qcom/common/common.mk)
+
 # QMI
 PRODUCT_PACKAGES += \
     libjson \

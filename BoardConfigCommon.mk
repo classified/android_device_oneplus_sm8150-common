@@ -8,6 +8,7 @@ BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
 COMMON_PATH := device/oneplus/sm8150-common
+QCOM_PATH := device/qcom/common
 
 # A/B
 AB_OTA_UPDATER := true
@@ -80,7 +81,7 @@ TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/config.fs
 TARGET_SURFACEFLINGER_UDFPS_LIB := //hardware/oneplus:libudfps_extension.oneplus
 
 # HIDL
-DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += $(COMMON_PATH)/device_framework_matrix.xml
 DEVICE_MANIFEST_FILE := $(COMMON_PATH)/manifest.xml
 ODM_MANIFEST_FILES := $(COMMON_PATH)/manifest-qva.xml
 
@@ -105,6 +106,7 @@ BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 BOARD_RAMDISK_USE_LZ4 := true
 TARGET_KERNEL_CONFIG := vendor/sm8150-perf_defconfig
 TARGET_KERNEL_SOURCE := kernel/oneplus/sm8150
+TARGET_KERNEL_VERSION := 4.14
 
 # Platform
 BOARD_USES_QCOM_HARDWARE := true
@@ -147,9 +149,12 @@ VENDOR_SECURITY_PATCH := 2022-02-01
 SOONG_CONFIG_NAMESPACES += ONEPLUS_MSMNILE_SENSORS
 SOONG_CONFIG_ONEPLUS_MSMNILE_SENSORS := ALS_POS_X ALS_POS_Y
 
-# SEPolicy
-include device/qcom/sepolicy_vndr-legacy-um/SEPolicy.mk
+# QC common
+OVERRIDE_QCOM_HARDWARE_VARIANT := sm8150-common
+TARGET_SEPOLICY_DIR := msmnile
+include $(QCOM_PATH)/BoardConfigQcom.mk
 
+# SEPolicy
 BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
 PRODUCT_PRIVATE_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/private
 PRODUCT_PUBLIC_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/public

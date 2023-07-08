@@ -1,0 +1,146 @@
+<compatibility-matrix version="2.0" type="framework">
+    <hal format="hidl" optional="true">
+        <name>vendor.dolby.hardware.dms</name>
+        <version>2.0</version>
+        <interface>
+            <name>IDms</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.lineage.touch</name>
+        <version>1.0</version>
+        <interface>
+            <name>ITouchscreenGesture</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.nxp.nxpnfc</name>
+        <version>1.0</version>
+        <interface>
+            <name>INxpNfc</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.oneplus.engnative.engineer</name>
+        <version>1.0</version>
+        <interface>
+            <name>IEngineer</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.oneplus.faceunlock.hal</name>
+        <version>1.0</version>
+        <interface>
+            <name>IFaceUnlockNativeService</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.oneplus.fingerprint.extension</name>
+        <version>1.0</version>
+        <interface>
+            <name>IVendorFingerprintExtensions</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.oneplus.hardware.CameraMDMHIDL</name>
+        <version>1.0</version>
+        <interface>
+            <name>IOnePlusCameraMDM</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.oneplus.hardware.camera</name>
+        <version>1.0</version>
+        <interface>
+            <name>IOnePlusCameraProvider</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.oneplus.hardware.display</name>
+        <version>1.0</version>
+        <interface>
+            <name>IOneplusDisplay</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.oneplus.hardware.drmkey</name>
+        <version>1.0</version>
+        <interface>
+            <name>IOneplusDrmKey</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.oneplus.hardware.hdcpkey</name>
+        <version>1.0</version>
+        <interface>
+            <name>IOneplusHdcpKey</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.oneplus.hardware.hypnus</name>
+        <version>1.0</version>
+        <interface>
+            <name>IHypnusUtil</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.oneplus.hardware.ifaa</name>
+        <version>2.0</version>
+        <interface>
+            <name>IOneplusIfaa</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.oneplus.hardware.lmvibrator</name>
+        <version>1.0</version>
+        <interface>
+            <name>ILinearMotorVibrator</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.oneplus.hardware.motorcontrol</name>
+        <version>1.0</version>
+        <interface>
+            <name>IOPMotorControl</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.oneplus.hardware.param</name>
+        <version>1.0</version>
+        <interface>
+            <name>IOneplusParam</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.oneplus.hardware.rpmb</name>
+        <version>1.0</version>
+        <interface>
+            <name>IOneplusRpmb</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.oneplus.hardware.wifi</name>
+        <version>1.0-1</version>
+        <interface>
+            <name>IOneplusWifi</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+</compatibility-matrix>
