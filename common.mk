@@ -405,7 +405,8 @@ TARGET_USE_SM8150_HALS := true
 
 # QC common
 TARGET_COMMON_QTI_COMPONENTS := \
-    adreno
+    adreno \
+    perf
 
 $(call inherit-product, device/qcom/common/common.mk)
 
