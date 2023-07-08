@@ -386,8 +386,6 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay-aosp
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
-PRODUCT_PACKAGES += \
-    WifiResCommon
 
 # Power
 PRODUCT_PACKAGES += \
@@ -406,6 +404,7 @@ TARGET_USE_SM8150_HALS := true
 # QC common
 TARGET_COMMON_QTI_COMPONENTS := \
     adreno \
+    overlay \
     perf
 
 $(call inherit-product, device/qcom/common/common.mk)
