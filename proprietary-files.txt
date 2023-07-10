@@ -46,7 +46,6 @@ vendor/firmware/tfa98xx.cnt
 
 # Audio FX modules
 system_ext/etc/permissions/audiosphere.xml
-system_ext/framework/audiosphere.jar
 vendor/lib/soundfx/libaudiopreprocessing.so
 vendor/lib/soundfx/libbundlewrapper.so
 vendor/lib/soundfx/libdownmix.so
