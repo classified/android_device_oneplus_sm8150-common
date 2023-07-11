@@ -410,6 +410,7 @@ TARGET_COMMON_QTI_COMPONENTS := \
     adreno \
     audio \
     av \
+    bt \
     overlay \
     perf \
     telephony \
