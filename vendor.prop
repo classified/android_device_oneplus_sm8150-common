@@ -125,6 +125,7 @@ persist.backup.ntpServer=0.pool.ntp.org
 debug.egl.hw=0
 debug.mdpcomp.logs=0
 debug.sf.hw=0
+debug.sf.disable_backpressure=1
 debug.sf.latch_unsignaled=1
 persist.demo.hdmirotationlock=false
 persist.sys.sf.color_mode=0
@@ -159,16 +160,11 @@ debug.stagefright.omx_default_rank=0
 ro.camera.notify_nfc=1
 ro.hardware.nfc_nci=nqx.default
 
-# PASR
-vendor.pasr.activemode.enabled=true
-vendor.power.pasr.enabled=false
-
 # OnePlus
 vendor.product.manufacturer=OPD
 
 # Perf
 ro.vendor.extension_library=libqti-perfd-client.so
-ro.vendor.scroll.preobtain.enable=false
 
 # Qualcomm System Daemon
 persist.vendor.qcomsysd.enabled=1

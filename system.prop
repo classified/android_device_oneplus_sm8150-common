@@ -27,7 +27,8 @@ debug.sf.enable_hwc_vds=1
 vendor.display.enable_rotator_ui=1
 
 # IO Prefetcher
-vendor.iop.enable_uxe=1
+vendor.iop.enable_prefetch_ofr=1
+vendor.iop.enable_uxe=0
 
 # Media
 av.offload.enable=true
