@@ -56,13 +56,13 @@ class DozeSettingsFragment : PreferenceFragment(), Preference.OnPreferenceChange
         alwaysOnDisplayPreference.onPreferenceChangeListener = this
 
         val pickupSensorCategory =
-            preferenceScreen.findPreference<PreferenceCategory>(Utils.CATEGORY_PICKUP_SENSOR)
+            preferenceScreen.findPreference<PreferenceCategory>(Utils.CATEGORY_PICKUP_SENSOR)!!
         if (getString(R.string.pickup_sensor_type).isEmpty()) {
             preferenceScreen.removePreference(pickupSensorCategory)
         }
 
         val proximitySensorCategory =
-            preferenceScreen.findPreference<PreferenceCategory>(Utils.CATEGORY_PROXIMITY_SENSOR)
+            preferenceScreen.findPreference<PreferenceCategory>(Utils.CATEGORY_PROXIMITY_SENSOR)!!
         if (getString(R.string.pocket_sensor_type).isEmpty()) {
             preferenceScreen.removePreference(proximitySensorCategory)
         }
@@ -79,8 +79,8 @@ class DozeSettingsFragment : PreferenceFragment(), Preference.OnPreferenceChange
         if (!Utils.alwaysOnDisplayAvailable(context)) {
             preferenceScreen.removePreference(alwaysOnDisplayPreference)
         } else {
-            pickupSensorCategory?.dependency = Utils.ALWAYS_ON_DISPLAY
-            proximitySensorCategory?.dependency = Utils.ALWAYS_ON_DISPLAY
+            pickupSensorCategory.dependency = Utils.ALWAYS_ON_DISPLAY
+            proximitySensorCategory.dependency = Utils.ALWAYS_ON_DISPLAY
         }
     }
 
