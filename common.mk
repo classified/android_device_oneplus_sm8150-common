@@ -114,6 +114,7 @@ PRODUCT_PACKAGES += \
     android.frameworks.displayservice@1.0 \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service_64 \
+    libutilscallstack.vendor:64 \
     libxml2 \
     vendor.oneplus.camera.CameraHIDL@1.0.vendor \
     vendor.qti.hardware.camera.device@1.0.vendor
@@ -387,8 +388,11 @@ PRODUCT_PACKAGES += \
 
 # QMI
 PRODUCT_PACKAGES += \
+    libcurl.vendor:64 \
     libjson \
-    libqti_vndfwk_detect.vendor
+    libjsoncpp.vendor \
+    libqti_vndfwk_detect.vendor \
+    libsqlite.vendor:64 \
 
 # RIL
 PRODUCT_PACKAGES += \
@@ -410,6 +414,7 @@ PRODUCT_PACKAGES += \
     als_correction_service.oneplus_msmnile \
     android.frameworks.sensorservice@1.0.vendor \
     android.hardware.sensors@2.0-service.oneplus_msmnile \
+    libdumpstateutil.vendor:64 \
     libsensorndkbridge \
     sensors.oneplus
 
@@ -524,6 +529,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.media.audio.common.types-V2-cpp \
     libnl \
+    libpng.vendor:32 \
+    libprocessgroup.vendor:32 \
     libwfdaac_vendor
 
 PRODUCT_BOOT_JARS += \
