@@ -77,6 +77,9 @@ ro.vendor.camera.res.fmq.size=1048576
 ro.soc.manufacturer=Qualcomm
 ro.soc.model=SM8150
 
+# Camera
+vendor.camera.aux.packageexcludelist=org.telegram.messenger,org.thunderdog.challegram,us.zoom.videomeetings
+
 # Crypto
 ro.crypto.allow_encrypt_override=true
 ro.crypto.volume.filenames_mode=aes-256-cts
